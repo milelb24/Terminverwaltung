@@ -8,5 +8,6 @@ public class Termin {
     public Termin(int id, String name) {
         this.id = id;
         this.name = name;
+        this.active = true;
     }
 }
