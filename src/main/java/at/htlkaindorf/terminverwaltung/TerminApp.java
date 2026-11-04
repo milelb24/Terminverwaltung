@@ -28,6 +28,7 @@ public class TerminApp extends Application {
     private Label lblStatus;
     private CheckBox cbZeigeId;
 
+    @SuppressWarnings("unchecked")
     @Override
     public void start(Stage primaryStage) {
         manager = new TerminManager();
@@ -82,17 +83,9 @@ public class TerminApp extends Application {
         TableColumn<Termin, String> colTitel = new TableColumn<>("Titel");
         colTitel.setCellValueFactory(new PropertyValueFactory<>("titel"));
 
-        TableColumn<Termin, Integer> colJahr = new TableColumn<>("Jahr");
-        colJahr.setCellValueFactory(cellData ->
-                new javafx.beans.property.SimpleIntegerProperty(cellData.getValue().getDatum().getYear()).asObject());
-
-        TableColumn<Termin, Integer> colMonat = new TableColumn<>("Monat");
-        colMonat.setCellValueFactory(cellData ->
-                new javafx.beans.property.SimpleIntegerProperty(cellData.getValue().getDatum().getMonthValue()).asObject());
-
-        TableColumn<Termin, Integer> colTag = new TableColumn<>("Tag");
-        colTag.setCellValueFactory(cellData ->
-                new javafx.beans.property.SimpleIntegerProperty(cellData.getValue().getDatum().getDayOfMonth()).asObject());
+        // Wieder als eine einzige Spalte
+        TableColumn<Termin, LocalDate> colDatum = new TableColumn<>("Datum");
+        colDatum.setCellValueFactory(new PropertyValueFactory<>("datum"));
 
         TableColumn<Termin, LocalTime> colBeginn = new TableColumn<>("Beginn");
         colBeginn.setCellValueFactory(new PropertyValueFactory<>("beginn"));
@@ -109,7 +102,7 @@ public class TerminApp extends Application {
         TableColumn<Termin, Integer> colVersion = new TableColumn<>("Version");
         colVersion.setCellValueFactory(new PropertyValueFactory<>("version"));
 
-        table.getColumns().addAll(colId, colTitel, colJahr, colMonat, colTag, colBeginn, colEnde, colOrt, colBeschreibung, colVersion);
+        table.getColumns().addAll(colId, colTitel, colDatum, colBeginn, colEnde, colOrt, colBeschreibung, colVersion);
 
         table.getSelectionModel().selectedItemProperty().addListener((obs, oldVal, newVal) -> {
             if (newVal != null) {
@@ -219,7 +212,7 @@ public class TerminApp extends Application {
             felderLeeren();
         });
 
-        Scene scene = new Scene(mainLayout, 1150, 700);
+        Scene scene = new Scene(mainLayout, 1050, 700);
         primaryStage.setScene(scene);
         primaryStage.show();
     }
