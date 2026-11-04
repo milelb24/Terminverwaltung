@@ -22,18 +22,16 @@ public class TerminApp extends Application {
     private ObservableList<Termin> tableData;
 
     private TextField tfTitel, tfBeginn, tfEnde, tfOrt, tfBeschreibung;
-    private DatePicker dpDatum; // Dropdown-Kalender für das Datum
+    private DatePicker dpDatum;
 
     private TextField tfSuche, tfFilterDatum;
     private Label lblStatus;
     private CheckBox cbZeigeId;
 
-    @SuppressWarnings("unchecked")
     @Override
     public void start(Stage primaryStage) {
         manager = new TerminManager();
 
-        // Wenn der Manager komplett leer ist, fügen wir Test-/Dummy-Daten ein
         if (manager.getAlleTermine().isEmpty()) {
             manager.erstelleTermin(new Termin("Mathe Schularbeit", LocalDate.now().plusDays(2), LocalTime.of(8, 50), LocalTime.of(10, 25), "Schule", "Vorbereitung Kapitel 4"));
             manager.erstelleTermin(new Termin("Fußballtraining", LocalDate.now().plusDays(4), LocalTime.of(17, 0), LocalTime.of(19, 0), "Sportplatz", "Neue Schuhe mitnehmen"));
@@ -45,10 +43,9 @@ public class TerminApp extends Application {
 
         primaryStage.setTitle("Terminverwaltung (JavaFX - Immutable Pattern)");
 
-        // Eingabefelder oben
         tfTitel = new TextField();
-        dpDatum = new DatePicker(); // Hier ist das Dropdown-Datumselement
-        dpDatum.setValue(LocalDate.now()); // Standardmäßig heutiges Datum
+        dpDatum = new DatePicker();
+        dpDatum.setValue(LocalDate.now());
         tfBeginn = new TextField();
         tfEnde = new TextField();
         tfOrt = new TextField();
@@ -75,7 +72,6 @@ public class TerminApp extends Application {
         VBox topBox = new VBox(10, grid, actionBox);
         topBox.setPadding(new Insets(10));
 
-        // Tabelle
         table = new TableView<>();
         table.setItems(tableData);
 
@@ -86,8 +82,17 @@ public class TerminApp extends Application {
         TableColumn<Termin, String> colTitel = new TableColumn<>("Titel");
         colTitel.setCellValueFactory(new PropertyValueFactory<>("titel"));
 
-        TableColumn<Termin, LocalDate> colDatum = new TableColumn<>("Datum");
-        colDatum.setCellValueFactory(new PropertyValueFactory<>("datum"));
+        TableColumn<Termin, Integer> colJahr = new TableColumn<>("Jahr");
+        colJahr.setCellValueFactory(cellData ->
+                new javafx.beans.property.SimpleIntegerProperty(cellData.getValue().getDatum().getYear()).asObject());
+
+        TableColumn<Termin, Integer> colMonat = new TableColumn<>("Monat");
+        colMonat.setCellValueFactory(cellData ->
+                new javafx.beans.property.SimpleIntegerProperty(cellData.getValue().getDatum().getMonthValue()).asObject());
+
+        TableColumn<Termin, Integer> colTag = new TableColumn<>("Tag");
+        colTag.setCellValueFactory(cellData ->
+                new javafx.beans.property.SimpleIntegerProperty(cellData.getValue().getDatum().getDayOfMonth()).asObject());
 
         TableColumn<Termin, LocalTime> colBeginn = new TableColumn<>("Beginn");
         colBeginn.setCellValueFactory(new PropertyValueFactory<>("beginn"));
@@ -104,13 +109,12 @@ public class TerminApp extends Application {
         TableColumn<Termin, Integer> colVersion = new TableColumn<>("Version");
         colVersion.setCellValueFactory(new PropertyValueFactory<>("version"));
 
-        table.getColumns().addAll(colId, colTitel, colDatum, colBeginn, colEnde, colOrt, colBeschreibung, colVersion);
+        table.getColumns().addAll(colId, colTitel, colJahr, colMonat, colTag, colBeginn, colEnde, colOrt, colBeschreibung, colVersion);
 
-        // Zeilenauswahl füllt Formular
         table.getSelectionModel().selectedItemProperty().addListener((obs, oldVal, newVal) -> {
             if (newVal != null) {
                 tfTitel.setText(newVal.getTitel());
-                dpDatum.setValue(newVal.getDatum()); // Datum in den DatePicker laden
+                dpDatum.setValue(newVal.getDatum());
                 tfBeginn.setText(newVal.getBeginn().toString());
                 tfEnde.setText(newVal.getEnde().toString());
                 tfOrt.setText(newVal.getOrt());
@@ -118,7 +122,6 @@ public class TerminApp extends Application {
             }
         });
 
-        // Unten: Suche, Filter, Export, Checkbox, Status
         tfSuche = new TextField();
         tfSuche.setPromptText("Suchbegriff");
         Button btnSuchen = new Button("Suchen");
@@ -163,14 +166,13 @@ public class TerminApp extends Application {
         bottomContainer.setPadding(new Insets(5));
         mainLayout.setBottom(bottomContainer);
 
-        // Button Logik
         btnLeeren.setOnAction(e -> felderLeeren());
 
         btnErstellen.setOnAction(e -> {
             try {
                 Termin t = new Termin(
                         tfTitel.getText().trim(),
-                        dpDatum.getValue(), // Datum direkt aus dem DatePicker holen
+                        dpDatum.getValue(),
                         LocalTime.parse(tfBeginn.getText().trim()),
                         LocalTime.parse(tfEnde.getText().trim()),
                         tfOrt.getText().trim(),
@@ -217,7 +219,7 @@ public class TerminApp extends Application {
             felderLeeren();
         });
 
-        Scene scene = new Scene(mainLayout, 1100, 700);
+        Scene scene = new Scene(mainLayout, 1150, 700);
         primaryStage.setScene(scene);
         primaryStage.show();
     }
