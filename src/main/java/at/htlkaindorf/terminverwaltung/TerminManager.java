@@ -1,7 +1,5 @@
 package at.htlkaindorf.terminverwaltung;
 
-import at.htlkaindorf.terminverwaltung.Termin;
-
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.time.LocalDate;
@@ -89,7 +87,7 @@ public class TerminManager {
             try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(datei))) {
                 termine = (List<Termin>) ois.readObject();
             } catch (IOException | ClassNotFoundException e) {
-                System.err.println("Fehler beim Laden der Datei: " + e.getMessage());
+                System.err.println("Fehler beim Laden: " + e.getMessage());
             }
         }
     }
