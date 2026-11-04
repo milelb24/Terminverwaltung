@@ -17,7 +17,6 @@ public final class Termin implements Serializable {
     private final String beschreibung;
     private final int version;
 
-    // Konstruktor für komplett neue Termine (Erstellt Version 1 mit neuer UUID)
     public Termin(String titel, LocalDate datum, LocalTime beginn, LocalTime ende, String ort, String beschreibung) {
         this.id = UUID.randomUUID().toString();
         this.titel = titel;
@@ -29,7 +28,6 @@ public final class Termin implements Serializable {
         this.version = 1;
     }
 
-    // Privater Konstruktor für neue Versionen desselben Termins
     private Termin(String id, String titel, LocalDate datum, LocalTime beginn, LocalTime ende, String ort, String beschreibung, int version) {
         this.id = id;
         this.titel = titel;
@@ -41,12 +39,10 @@ public final class Termin implements Serializable {
         this.version = version;
     }
 
-    // Erzeugt ein neues Termin-Objekt mit erhöhter Versionsnummer (Immutable Pattern)
     public Termin updateTermin(String titel, LocalDate datum, LocalTime beginn, LocalTime ende, String ort, String beschreibung) {
         return new Termin(this.id, titel, datum, beginn, ende, ort, beschreibung, this.version + 1);
     }
 
-    // Getter (Keine Setter vorhanden, da immutable)
     public String getId() { return id; }
     public String getTitel() { return titel; }
     public LocalDate getDatum() { return datum; }
