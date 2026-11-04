@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf7444d7-497a-4ab9-bcf9-05ec16e5609e" name="Changes" comment="Termin">
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/htlkaindorf/terminverwaltung/TerminGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,61 +50,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="5.590901188959131E-239" />
-      <entry key="S2" value="3.0599514497943245E-60" />
-      <entry key="S5" value="2.4680980072603828E-24" />
-      <entry key="S10" value="3.3119515041521315E-12" />
-      <entry key="S30" value="5.286107472487791E-4" />
-      <entry key="S60" value="0.06316086757930045" />
-      <entry key="M2" value="0.7039501761541003" />
-      <entry key="M5" value="3.0177158969288427" />
-      <entry key="M10" value="4.910986845695712" />
-      <entry key="M15" value="5.777766848818012" />
-      <entry key="M30" value="6.798296281466195" />
-      <entry key="H1" value="7.374604720964871" />
-      <entry key="H2" value="7.680911949518788" />
-      <entry key="H4" value="7.838825391013447" />
-      <entry key="D1" value="7.972908240130064" />
-      <entry key="W1" value="7.9961240948553085" />
-    </decayedCancelled>
-    <decayedSelected>
       <entry key="MS100" value="1.0" />
       <entry key="MS500" value="1.0" />
       <entry key="S2" value="1.0" />
       <entry key="S5" value="1.0" />
-      <entry key="S10" value="1.0000000000019695" />
-      <entry key="S30" value="1.000219856507334" />
-      <entry key="S60" value="1.0264234928614993" />
-      <entry key="M2" value="1.3135633060202938" />
-      <entry key="M5" value="2.4313107895655097" />
-      <entry key="M10" value="3.3889864403014545" />
-      <entry key="M15" value="3.835808425998425" />
-      <entry key="M30" value="4.367381104015008" />
-      <entry key="H1" value="4.669924102210373" />
-      <entry key="H2" value="4.8313671789806065" />
-      <entry key="H4" value="4.914764959190821" />
-      <entry key="D1" value="4.985664845906113" />
-      <entry key="W1" value="4.997948931210103" />
+      <entry key="S10" value="1.0000000000000724" />
+      <entry key="S30" value="1.0001477378093004" />
+      <entry key="S60" value="1.0333907304730734" />
+      <entry key="M2" value="1.511836011527422" />
+      <entry key="M5" value="3.6565250611174704" />
+      <entry key="M10" value="5.607725028763196" />
+      <entry key="M15" value="6.537391141215022" />
+      <entry key="M30" value="7.655377319958535" />
+      <entry key="H1" value="8.296675696436171" />
+      <entry key="H2" value="8.64022124794186" />
+      <entry key="H4" value="8.818034183346185" />
+      <entry key="D1" value="8.96937986533543" />
+      <entry key="W1" value="8.995618477683953" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="8.066774047309004E-167" />
+      <entry key="MS500" value="6.0442160321175995E-34" />
+      <entry key="S2" value="4.9583250553300366E-9" />
+      <entry key="S5" value="4.765780081915162E-4" />
+      <entry key="S10" value="0.021830666691454784" />
+      <entry key="S30" value="0.27954461990853313" />
+      <entry key="S60" value="0.5426307698883035" />
+      <entry key="M2" value="0.9550803824147687" />
+      <entry key="M5" value="2.140306862690189" />
+      <entry key="M10" value="3.179710745265484" />
+      <entry key="M15" value="3.6762251148758054" />
+      <entry key="M30" value="4.275566692572589" />
+      <entry key="H1" value="4.62057601594973" />
+      <entry key="H2" value="4.805772337979885" />
+      <entry key="H4" value="4.901729345587352" />
+      <entry key="D1" value="4.9834584622820985" />
+      <entry key="W1" value="4.9976328969951265" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="4.895881262065518E-6" />
-      <entry key="MS500" value="0.08668943557071157" />
-      <entry key="S2" value="0.5426146859409036" />
-      <entry key="S5" value="0.783062844292937" />
-      <entry key="S10" value="0.8849083818682726" />
-      <entry key="S30" value="0.9607724481212695" />
-      <entry key="S60" value="1.0672425870305227" />
-      <entry key="M2" value="1.9955009828250785" />
-      <entry key="M5" value="5.424697419698615" />
-      <entry key="M10" value="8.281457143160825" />
-      <entry key="M15" value="9.599291262945806" />
-      <entry key="M30" value="11.157392774193074" />
-      <entry key="H1" value="12.04006375067283" />
-      <entry key="H2" value="12.509960796148976" />
-      <entry key="H4" value="12.752409065561073" />
-      <entry key="D1" value="12.958373074913034" />
-      <entry key="W1" value="12.994044375615022" />
+      <entry key="MS100" value="0.8705505632961241" />
+      <entry key="MS500" value="0.9726549474122855" />
+      <entry key="S2" value="0.9930924981274959" />
+      <entry key="S5" value="0.9976044418826915" />
+      <entry key="S10" value="1.0179328060380315" />
+      <entry key="S30" value="1.2680577416485188" />
+      <entry key="S60" value="1.5639792384873885" />
+      <entry key="M2" value="2.450795780479514" />
+      <entry key="M5" value="5.775368421597295" />
+      <entry key="M10" value="8.770039929965943" />
+      <entry key="M15" value="10.199911106906601" />
+      <entry key="M30" value="11.922825865044757" />
+      <entry key="H1" value="12.912829972448847" />
+      <entry key="H2" value="13.443685609853087" />
+      <entry key="H4" value="13.718584414751513" />
+      <entry key="D1" value="13.952638244557686" />
+      <entry key="W1" value="13.993222703118803" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -120,6 +119,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Launcher.executor": "Run",
+    "Application.TerminApp.executor": "Run",
     "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",

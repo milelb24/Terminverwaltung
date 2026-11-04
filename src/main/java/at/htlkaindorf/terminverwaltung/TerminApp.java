@@ -21,7 +21,9 @@ public class TerminApp extends Application {
     private TableView<Termin> table;
     private ObservableList<Termin> tableData;
 
-    private TextField tfTitel, tfDatum, tfBeginn, tfEnde, tfOrt, tfBeschreibung;
+    private TextField tfTitel, tfBeginn, tfEnde, tfOrt, tfBeschreibung;
+    private DatePicker dpDatum; // Dropdown-Kalender für das Datum
+
     private TextField tfSuche, tfFilterDatum;
     private Label lblStatus;
     private CheckBox cbZeigeId;
@@ -30,12 +32,23 @@ public class TerminApp extends Application {
     @Override
     public void start(Stage primaryStage) {
         manager = new TerminManager();
+
+        // Wenn der Manager komplett leer ist, fügen wir Test-/Dummy-Daten ein
+        if (manager.getAlleTermine().isEmpty()) {
+            manager.erstelleTermin(new Termin("Mathe Schularbeit", LocalDate.now().plusDays(2), LocalTime.of(8, 50), LocalTime.of(10, 25), "Schule", "Vorbereitung Kapitel 4"));
+            manager.erstelleTermin(new Termin("Fußballtraining", LocalDate.now().plusDays(4), LocalTime.of(17, 0), LocalTime.of(19, 0), "Sportplatz", "Neue Schuhe mitnehmen"));
+            manager.erstelleTermin(new Termin("Projektbesprechung", LocalDate.now().plusDays(1), LocalTime.of(14, 0), LocalTime.of(15, 0), "Online", "JavaFX Oberfläche besprechen"));
+            manager.speichereTermine();
+        }
+
         tableData = FXCollections.observableArrayList(manager.getAlleTermine());
 
         primaryStage.setTitle("Terminverwaltung (JavaFX - Immutable Pattern)");
 
+        // Eingabefelder oben
         tfTitel = new TextField();
-        tfDatum = new TextField();
+        dpDatum = new DatePicker(); // Hier ist das Dropdown-Datumselement
+        dpDatum.setValue(LocalDate.now()); // Standardmäßig heutiges Datum
         tfBeginn = new TextField();
         tfEnde = new TextField();
         tfOrt = new TextField();
@@ -47,7 +60,7 @@ public class TerminApp extends Application {
         grid.setPadding(new Insets(10));
 
         grid.add(new Label("Titel:"), 0, 0); grid.add(tfTitel, 1, 0);
-        grid.add(new Label("Datum (YYYY-MM-DD):"), 0, 1); grid.add(tfDatum, 1, 1);
+        grid.add(new Label("Datum:"), 0, 1); grid.add(dpDatum, 1, 1);
         grid.add(new Label("Beginn (HH:MM):"), 0, 2); grid.add(tfBeginn, 1, 2);
         grid.add(new Label("Ende (HH:MM):"), 0, 3); grid.add(tfEnde, 1, 3);
         grid.add(new Label("Ort:"), 0, 4); grid.add(tfOrt, 1, 4);
@@ -97,7 +110,7 @@ public class TerminApp extends Application {
         table.getSelectionModel().selectedItemProperty().addListener((obs, oldVal, newVal) -> {
             if (newVal != null) {
                 tfTitel.setText(newVal.getTitel());
-                tfDatum.setText(newVal.getDatum().toString());
+                dpDatum.setValue(newVal.getDatum()); // Datum in den DatePicker laden
                 tfBeginn.setText(newVal.getBeginn().toString());
                 tfEnde.setText(newVal.getEnde().toString());
                 tfOrt.setText(newVal.getOrt());
@@ -157,7 +170,7 @@ public class TerminApp extends Application {
             try {
                 Termin t = new Termin(
                         tfTitel.getText().trim(),
-                        LocalDate.parse(tfDatum.getText().trim()),
+                        dpDatum.getValue(), // Datum direkt aus dem DatePicker holen
                         LocalTime.parse(tfBeginn.getText().trim()),
                         LocalTime.parse(tfEnde.getText().trim()),
                         tfOrt.getText().trim(),
@@ -167,7 +180,7 @@ public class TerminApp extends Application {
                 aktTabelle(manager.getAlleTermine());
                 felderLeeren();
             } catch (Exception ex) {
-                showAlert("Fehler", "Bitte Eingaben prüfen (Datum: YYYY-MM-DD, Zeit: HH:MM).");
+                showAlert("Fehler", "Bitte Eingaben prüfen (Zeitformat: HH:MM, Datum ausgewählt?).");
             }
         });
 
@@ -180,7 +193,7 @@ public class TerminApp extends Application {
             try {
                 Termin neu = selected.updateTermin(
                         tfTitel.getText().isEmpty() ? selected.getTitel() : tfTitel.getText().trim(),
-                        tfDatum.getText().isEmpty() ? selected.getDatum() : LocalDate.parse(tfDatum.getText().trim()),
+                        dpDatum.getValue() != null ? dpDatum.getValue() : selected.getDatum(),
                         tfBeginn.getText().isEmpty() ? selected.getBeginn() : LocalTime.parse(tfBeginn.getText().trim()),
                         tfEnde.getText().isEmpty() ? selected.getEnde() : LocalTime.parse(tfEnde.getText().trim()),
                         tfOrt.getText().isEmpty() ? selected.getOrt() : tfOrt.getText().trim(),
@@ -216,7 +229,7 @@ public class TerminApp extends Application {
     private void felderLeeren() {
         table.getSelectionModel().clearSelection();
         tfTitel.clear();
-        tfDatum.clear();
+        dpDatum.setValue(LocalDate.now());
         tfBeginn.clear();
         tfEnde.clear();
         tfOrt.clear();
