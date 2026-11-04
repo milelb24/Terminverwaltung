@@ -2,6 +2,8 @@ package at.htlkaindorf.terminverwaltung;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -51,7 +53,7 @@ public class TerminManager {
     }
 
     public void speichereTermine() {
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(DATEI_NAME))) {
+        try (ObjectOutputStream oos = new ObjectOutputStream(Files.newOutputStream(Paths.get(DATEI_NAME)))) {
             oos.writeObject(termine);
         } catch (IOException e) {
             System.err.println("Fehler beim Speichern: " + e.getMessage());
@@ -59,7 +61,7 @@ public class TerminManager {
     }
 
     public void exportiereAlsCsv(File file) throws IOException {
-        try (PrintWriter writer = new PrintWriter(new OutputStreamWriter(new FileOutputStream(file), StandardCharsets.UTF_8))) {
+        try (PrintWriter writer = new PrintWriter(new OutputStreamWriter(Files.newOutputStream(file.toPath()), StandardCharsets.UTF_8))) {
             writer.println("ID;Titel;Datum;Beginn;Ende;Ort;Beschreibung;Version");
             for (Termin t : termine) {
                 writer.printf("%s;%s;%s;%s;%s;%s;%s;v%d%n",
@@ -70,7 +72,7 @@ public class TerminManager {
     }
 
     public void exportiereAlsTxt(File file) throws IOException {
-        try (PrintWriter writer = new PrintWriter(new OutputStreamWriter(new FileOutputStream(file), StandardCharsets.UTF_8))) {
+        try (PrintWriter writer = new PrintWriter(new OutputStreamWriter(Files.newOutputStream(file.toPath()), StandardCharsets.UTF_8))) {
             writer.println("=== TERMINÜBERSICHT EXPORT ===");
             writer.println("Anzahl Termine: " + termine.size());
             writer.println("=========================================\n");
@@ -84,7 +86,7 @@ public class TerminManager {
     private void ladeTermine() {
         File datei = new File(DATEI_NAME);
         if (datei.exists()) {
-            try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(datei))) {
+            try (ObjectInputStream ois = new ObjectInputStream(Files.newInputStream(datei.toPath()))) {
                 termine = (List<Termin>) ois.readObject();
             } catch (IOException | ClassNotFoundException e) {
                 System.err.println("Fehler beim Laden: " + e.getMessage());
