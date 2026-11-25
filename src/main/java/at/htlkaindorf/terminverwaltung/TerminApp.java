@@ -15,7 +15,6 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
 
-/** Startklasse der Terminverwaltung. */
 public class TerminApp extends Application {
 
     @Override
@@ -25,7 +24,6 @@ public class TerminApp extends Application {
 
         TerminManager manager = new TerminManager(gespeicherteTermine);
 
-        // Beispieldaten werden nur angelegt, wenn noch keine Termine vorhanden sind.
         if (manager.getAlleTermine().isEmpty()) {
             manager.erstelleTermin(new Termin(
                     "Mathe Schularbeit",
