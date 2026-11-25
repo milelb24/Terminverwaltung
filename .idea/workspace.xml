@@ -5,7 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf7444d7-497a-4ab9-bcf9-05ec16e5609e" name="Changes" comment="Termin">
+      <change afterPath="$PROJECT_DIR$/src/main/java/at/htlkaindorf/terminverwaltung/export/TerminExporter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/at/htlkaindorf/terminverwaltung/persistence/TerminSpeicher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/at/htlkaindorf/terminverwaltung/ui/TerminController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/at/htlkaindorf/terminverwaltung/ui/TerminView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/at/htlkaindorf/terminverwaltung/ui/components/TerminFormular.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/at/htlkaindorf/terminverwaltung/ui/components/TerminTabelle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/htlkaindorf/terminverwaltung/Termin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/htlkaindorf/terminverwaltung/model/Termin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/htlkaindorf/terminverwaltung/TerminApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/htlkaindorf/terminverwaltung/TerminApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/htlkaindorf/terminverwaltung/TerminManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/htlkaindorf/terminverwaltung/service/TerminManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,61 +60,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.0" />
-      <entry key="S5" value="1.0" />
-      <entry key="S10" value="1.0000000000000724" />
-      <entry key="S30" value="1.0001477378093004" />
-      <entry key="S60" value="1.0333907304730734" />
-      <entry key="M2" value="1.511836011527422" />
-      <entry key="M5" value="3.6565250611174704" />
-      <entry key="M10" value="5.607725028763196" />
-      <entry key="M15" value="6.537391141215022" />
-      <entry key="M30" value="7.655377319958535" />
-      <entry key="H1" value="8.296675696436171" />
-      <entry key="H2" value="8.64022124794186" />
-      <entry key="H4" value="8.818034183346185" />
-      <entry key="D1" value="8.96937986533543" />
-      <entry key="W1" value="8.995618477683953" />
+      <entry key="MS100" value="1.0000000067148396" />
+      <entry key="MS500" value="1.02403761784676" />
+      <entry key="S2" value="1.5605992496477605" />
+      <entry key="S5" value="2.178980276886956" />
+      <entry key="S10" value="2.530339533220409" />
+      <entry key="S30" value="2.8280490327742918" />
+      <entry key="S60" value="2.935493752457229" />
+      <entry key="M2" value="3.293520144551282" />
+      <entry key="M5" value="5.312569471093921" />
+      <entry key="M10" value="8.069976817174926" />
+      <entry key="M15" value="9.699413554940238" />
+      <entry key="M30" value="11.928840325560998" />
+      <entry key="H1" value="13.340547676303736" />
+      <entry key="H2" value="14.136598425151936" />
+      <entry key="H4" value="14.559515219223657" />
+      <entry key="D1" value="14.925333547408583" />
+      <entry key="W1" value="14.989302264021973" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="8.066774047309004E-167" />
-      <entry key="MS500" value="6.0442160321175995E-34" />
-      <entry key="S2" value="4.9583250553300366E-9" />
-      <entry key="S5" value="4.765780081915162E-4" />
-      <entry key="S10" value="0.021830666691454784" />
-      <entry key="S30" value="0.27954461990853313" />
-      <entry key="S60" value="0.5426307698883035" />
-      <entry key="M2" value="0.9550803824147687" />
-      <entry key="M5" value="2.140306862690189" />
-      <entry key="M10" value="3.179710745265484" />
-      <entry key="M15" value="3.6762251148758054" />
-      <entry key="M30" value="4.275566692572589" />
-      <entry key="H1" value="4.62057601594973" />
-      <entry key="H2" value="4.805772337979885" />
-      <entry key="H4" value="4.901729345587352" />
-      <entry key="D1" value="4.9834584622820985" />
-      <entry key="W1" value="4.9976328969951265" />
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="2.33835456057E-313" />
+      <entry key="S2" value="6.953886385452637E-79" />
+      <entry key="S5" value="5.456209486224195E-32" />
+      <entry key="S10" value="2.335853053221817E-16" />
+      <entry key="S30" value="6.159951763416935E-6" />
+      <entry key="S60" value="0.002547226142737841" />
+      <entry key="M2" value="0.06543671180476777" />
+      <entry key="M5" value="0.7324680089388157" />
+      <entry key="M10" value="1.8601326815642338" />
+      <entry key="M15" value="2.571419719904807" />
+      <entry key="M30" value="3.5758485896243464" />
+      <entry key="H1" value="4.22560441472443" />
+      <entry key="H2" value="4.595783402243435" />
+      <entry key="H4" value="4.793442333548479" />
+      <entry key="D1" value="4.96493849219848" />
+      <entry key="W1" value="4.994975426256434" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.8705505632961241" />
-      <entry key="MS500" value="0.9726549474122855" />
-      <entry key="S2" value="0.9930924981274959" />
-      <entry key="S5" value="0.9976044418826915" />
-      <entry key="S10" value="1.0179328060380315" />
-      <entry key="S30" value="1.2680577416485188" />
-      <entry key="S60" value="1.5639792384873885" />
-      <entry key="M2" value="2.450795780479514" />
-      <entry key="M5" value="5.775368421597295" />
-      <entry key="M10" value="8.770039929965943" />
-      <entry key="M15" value="10.199911106906601" />
-      <entry key="M30" value="11.922825865044757" />
-      <entry key="H1" value="12.912829972448847" />
-      <entry key="H2" value="13.443685609853087" />
-      <entry key="H4" value="13.718584414751513" />
-      <entry key="D1" value="13.952638244557686" />
-      <entry key="W1" value="13.993222703118803" />
+      <entry key="MS100" value="0.010096506507395535" />
+      <entry key="MS500" value="0.40636468233612455" />
+      <entry key="S2" value="1.2257161644176946" />
+      <entry key="S5" value="1.9783073776049942" />
+      <entry key="S10" value="2.4115056171582987" />
+      <entry key="S30" value="2.7832541017475827" />
+      <entry key="S60" value="2.9144284422271185" />
+      <entry key="M2" value="3.343577175604283" />
+      <entry key="M5" value="6.028471406967787" />
+      <entry key="M10" value="9.913869888884" />
+      <entry key="M15" value="12.256758962654596" />
+      <entry key="M30" value="15.495392036049552" />
+      <entry key="H1" value="17.56078013670807" />
+      <entry key="H2" value="18.729490771989916" />
+      <entry key="H4" value="19.3514574084893" />
+      <entry key="D1" value="19.890014129515777" />
+      <entry key="W1" value="19.984240648820002" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -116,33 +126,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Launcher.executor": "Run",
-    "Application.TerminApp.executor": "Run",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "master",
-    "junie.onboarding.icon.badge.shown": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/grits/OneDrive/Dokumente/HTL_Kaindorf/3_Klasse/LOAL/Terminverwaltung",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "to.speed.mode.migration.done": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Launcher.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TerminApp.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/grits/OneDrive/Dokumente/HTL_Kaindorf/3_Klasse/LOAL/Terminverwaltung&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">

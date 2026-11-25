@@ -1,5 +1,7 @@
 package at.htlkaindorf.terminverwaltung;
 
+import at.htlkaindorf.terminverwaltung.model.Termin;
+import at.htlkaindorf.terminverwaltung.service.TerminManager;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -83,7 +85,6 @@ public class TerminApp extends Application {
         TableColumn<Termin, String> colTitel = new TableColumn<>("Titel");
         colTitel.setCellValueFactory(new PropertyValueFactory<>("titel"));
 
-        // Wieder als eine einzige Spalte
         TableColumn<Termin, LocalDate> colDatum = new TableColumn<>("Datum");
         colDatum.setCellValueFactory(new PropertyValueFactory<>("datum"));
 
