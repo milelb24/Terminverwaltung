@@ -10,9 +10,6 @@ import javafx.scene.layout.GridPane;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-/**
- * Eingabefelder für einen Termin.
- */
 public class TerminFormular extends GridPane {
     private final TextField tfTitel;
     private final DatePicker dpDatum;
@@ -87,9 +84,6 @@ public class TerminFormular extends GridPane {
         return tfBeschreibung.getText().trim();
     }
 
-    /**
-     * Füllt alle Eingabefelder mit den Daten der ausgewählten Version.
-     */
     public void fuelleMit(Termin termin) {
         tfTitel.setText(termin.getTitel());
         dpDatum.setValue(termin.getDatum());

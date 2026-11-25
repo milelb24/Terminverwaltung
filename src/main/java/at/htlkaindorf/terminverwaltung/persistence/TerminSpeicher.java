@@ -13,7 +13,6 @@ import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.List;
 
-/** Kümmert sich ausschließlich um das Laden und Speichern der Terminliste. */
 public class TerminSpeicher {
     private final Path datei;
 
@@ -67,7 +66,6 @@ public class TerminSpeicher {
         }
     }
 
-    /** Legt bei einem nicht lesbaren Speicherstand eine Sicherungskopie an. */
     private void sichereAlteDatei() {
         try {
             Path backupDatei = datei.resolveSibling(datei.getFileName().toString() + ".backup");

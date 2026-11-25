@@ -118,7 +118,6 @@ public class TerminController {
 
     private void speichereUndExportiere() {
         try {
-            // Die interne Speicherdatei wird auch dann aktualisiert, wenn der Export abgebrochen wird.
             speicher.speichereTermine(manager.getAlleTermine());
         } catch (IOException e) {
             zeigeMeldung("Fehler", "Die Termine konnten nicht gespeichert werden: " + e.getMessage());

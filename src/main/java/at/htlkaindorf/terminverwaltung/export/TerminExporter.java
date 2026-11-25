@@ -9,7 +9,6 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.util.List;
 
-/** Exportiert Termine in CSV- oder TXT-Dateien. */
 public class TerminExporter {
 
     public void exportiereAlsCsv(File datei, List<Termin> termine) throws IOException {
@@ -48,7 +47,6 @@ public class TerminExporter {
         }
     }
 
-    /** Schützt CSV-Felder vor Problemen mit Semikolons, Anführungszeichen und Zeilenumbrüchen. */
     private String csvWert(String wert) {
         return "\"" + wert.replace("\"", "\"\"") + "\"";
     }

@@ -4,18 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bf7444d7-497a-4ab9-bcf9-05ec16e5609e" name="Changes" comment="Termin">
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/htlkaindorf/terminverwaltung/export/TerminExporter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/htlkaindorf/terminverwaltung/persistence/TerminSpeicher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/htlkaindorf/terminverwaltung/ui/TerminController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/htlkaindorf/terminverwaltung/ui/TerminView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/htlkaindorf/terminverwaltung/ui/components/TerminFormular.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/htlkaindorf/terminverwaltung/ui/components/TerminTabelle.java" afterDir="false" />
+    <list default="true" id="bf7444d7-497a-4ab9-bcf9-05ec16e5609e" name="Changes" comment="Termin-neu">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/at/htlkaindorf/terminverwaltung/Termin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/htlkaindorf/terminverwaltung/model/Termin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/at/htlkaindorf/terminverwaltung/TerminApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/htlkaindorf/terminverwaltung/TerminApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/at/htlkaindorf/terminverwaltung/TerminManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/htlkaindorf/terminverwaltung/service/TerminManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/htlkaindorf/terminverwaltung/export/TerminExporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/htlkaindorf/terminverwaltung/export/TerminExporter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/htlkaindorf/terminverwaltung/persistence/TerminSpeicher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/htlkaindorf/terminverwaltung/persistence/TerminSpeicher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/htlkaindorf/terminverwaltung/ui/TerminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/htlkaindorf/terminverwaltung/ui/TerminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/htlkaindorf/terminverwaltung/ui/components/TerminFormular.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/htlkaindorf/terminverwaltung/ui/components/TerminFormular.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,61 +55,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0000000067148396" />
-      <entry key="MS500" value="1.02403761784676" />
-      <entry key="S2" value="1.5605992496477605" />
-      <entry key="S5" value="2.178980276886956" />
-      <entry key="S10" value="2.530339533220409" />
-      <entry key="S30" value="2.8280490327742918" />
-      <entry key="S60" value="2.935493752457229" />
-      <entry key="M2" value="3.293520144551282" />
-      <entry key="M5" value="5.312569471093921" />
-      <entry key="M10" value="8.069976817174926" />
-      <entry key="M15" value="9.699413554940238" />
-      <entry key="M30" value="11.928840325560998" />
-      <entry key="H1" value="13.340547676303736" />
-      <entry key="H2" value="14.136598425151936" />
-      <entry key="H4" value="14.559515219223657" />
-      <entry key="D1" value="14.925333547408583" />
-      <entry key="W1" value="14.989302264021973" />
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.0" />
+      <entry key="S5" value="1.0000000000063518" />
+      <entry key="S10" value="1.0000043202043503" />
+      <entry key="S30" value="1.0338009389545622" />
+      <entry key="S60" value="1.3209239103256611" />
+      <entry key="M2" value="2.088982201251859" />
+      <entry key="M5" value="4.412312564130378" />
+      <entry key="M10" value="7.4676182613534925" />
+      <entry key="M15" value="9.368742486472078" />
+      <entry key="M30" value="12.080403841243797" />
+      <entry key="H1" value="13.857375899729687" />
+      <entry key="H2" value="14.878235802566623" />
+      <entry key="H4" value="15.425855750835114" />
+      <entry key="D1" value="15.902409410123377" />
+      <entry key="W1" value="15.98601118442838" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="2.33835456057E-313" />
-      <entry key="S2" value="6.953886385452637E-79" />
-      <entry key="S5" value="5.456209486224195E-32" />
-      <entry key="S10" value="2.335853053221817E-16" />
-      <entry key="S30" value="6.159951763416935E-6" />
-      <entry key="S60" value="0.002547226142737841" />
-      <entry key="M2" value="0.06543671180476777" />
-      <entry key="M5" value="0.7324680089388157" />
-      <entry key="M10" value="1.8601326815642338" />
-      <entry key="M15" value="2.571419719904807" />
-      <entry key="M30" value="3.5758485896243464" />
-      <entry key="H1" value="4.22560441472443" />
-      <entry key="H2" value="4.595783402243435" />
-      <entry key="H4" value="4.793442333548479" />
-      <entry key="D1" value="4.96493849219848" />
-      <entry key="W1" value="4.994975426256434" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="1.0089160621965808E-107" />
+      <entry key="S5" value="1.5905305473020804E-43" />
+      <entry key="S10" value="3.9881456183398624E-22" />
+      <entry key="S30" value="7.362395457268595E-8" />
+      <entry key="S60" value="2.784764142410109E-4" />
+      <entry key="M2" value="0.02163624673185294" />
+      <entry key="M5" value="0.47047098458193426" />
+      <entry key="M10" value="1.49078843376862" />
+      <entry key="M15" value="2.218644389026887" />
+      <entry key="M30" value="3.321517043302066" />
+      <entry key="H1" value="4.0725602637869" />
+      <entry key="H2" value="4.511790165898469" />
+      <entry key="H4" value="4.749437506161968" />
+      <entry key="D1" value="4.957312737554791" />
+      <entry key="W1" value="4.993878719991773" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.010096506507395535" />
-      <entry key="MS500" value="0.40636468233612455" />
-      <entry key="S2" value="1.2257161644176946" />
-      <entry key="S5" value="1.9783073776049942" />
-      <entry key="S10" value="2.4115056171582987" />
-      <entry key="S30" value="2.7832541017475827" />
-      <entry key="S60" value="2.9144284422271185" />
-      <entry key="M2" value="3.343577175604283" />
-      <entry key="M5" value="6.028471406967787" />
-      <entry key="M10" value="9.913869888884" />
-      <entry key="M15" value="12.256758962654596" />
-      <entry key="M30" value="15.495392036049552" />
-      <entry key="H1" value="17.56078013670807" />
-      <entry key="H2" value="18.729490771989916" />
-      <entry key="H4" value="19.3514574084893" />
-      <entry key="D1" value="19.890014129515777" />
-      <entry key="W1" value="19.984240648820002" />
+      <entry key="MS100" value="0.8585654364377537" />
+      <entry key="MS500" value="0.9699619103417348" />
+      <entry key="S2" value="0.9924043746858185" />
+      <entry key="S5" value="0.9969547984720186" />
+      <entry key="S10" value="0.9984803556201742" />
+      <entry key="S30" value="1.0327573696380266" />
+      <entry key="S60" value="1.3183668160361626" />
+      <entry key="M2" value="2.1054061821227936" />
+      <entry key="M5" value="4.872092177084302" />
+      <entry key="M10" value="8.945366174846058" />
+      <entry key="M15" value="11.575226487110804" />
+      <entry key="M30" value="15.39327677239568" />
+      <entry key="H1" value="17.92475453628616" />
+      <entry key="H2" value="19.3871856324804" />
+      <entry key="H4" value="20.173805825385795" />
+      <entry key="D1" value="20.85946445722068" />
+      <entry key="W1" value="20.979852845880956" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -189,7 +184,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Termin" />
-    <option name="LAST_COMMIT_MESSAGE" value="Termin" />
+    <MESSAGE value="Termin-neu" />
+    <option name="LAST_COMMIT_MESSAGE" value="Termin-neu" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
